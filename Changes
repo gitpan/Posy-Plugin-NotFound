@@ -1,6 +1,13 @@
 Revision history for Posy-Plugin-NotFound
 =========================================
 
+0.20 Sat 29 January 2005
+------------------------
+
+  * (29 Jan 2005) path status
+  	The $self->{path}->{status} needs to be set to 404
+  when a page is not found.
+
 0.10 Sat 22 January 2005
 ------------------------
 

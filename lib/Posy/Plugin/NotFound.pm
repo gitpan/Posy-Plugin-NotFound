@@ -7,11 +7,11 @@ Posy::Plugin::NotFound - Posy plugin to provide a custom Not Found page.
 
 =head1 VERSION
 
-This describes version B<0.10> of Posy::Plugin::NotFound.
+This describes version B<0.20> of Posy::Plugin::NotFound.
 
 =cut
 
-our $VERSION = '0.10';
+our $VERSION = '0.20';
 
 =head1 SYNOPSIS
 
@@ -108,6 +108,7 @@ sub process_path_error {
     if ($self->{path}->{error}
 	&& $self->{config}->{not_found_entry})
     {
+	$self->{path}->{status} = 404;
 	my ($path_and_filebase, $suffix) =
 	    $self->{config}->{not_found_entry} =~ /^(.*)\.(\w+)$/;
 	$path_and_filebase = $self->{config}->{not_found_entry} if (!$suffix);
