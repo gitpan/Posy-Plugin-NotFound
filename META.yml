@@ -1,0 +1,16 @@
+--- #YAML:1.0
+name: Posy-Plugin-NotFound
+version: 0.10
+author:
+  - Kathryn Andersen
+abstract: Posy plugin to provide a custom Not Found page.
+license: perl
+requires:
+  Posy: 0.71
+build_requires:
+  Test::More: 0
+provides:
+  Posy::Plugin::NotFound:
+    file: lib/Posy/Plugin/NotFound.pm
+    version: 0.10
+generated_by: Module::Build version 0.2605

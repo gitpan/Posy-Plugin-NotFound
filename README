@@ -1,0 +1,73 @@
+
+==== NAME ====
+
+Posy::Plugin::NotFound - Posy plugin to provide a custom Not Found page.
+
+
+==== VERSION ====
+
+This describes version ``0.10'' of Posy::Plugin::NotFound.
+
+
+==== DESCRIPTION ====
+
+The purpose of this plugin is to provide the user with the ability to
+present a custom "Page Not Found" page, rather than the boring plain-text
+message which Posy::Core provides in the 'process_path_error' method.
+
+
+==   Activation   ==
+
+Add the plugin to the plugin list.
+
+This plugin replaces the 'process_path_error' method, replacing its actions
+with an alteration of the 'path' information so that the
+$self->{config}->{not_found_entry} will be displayed instead, as if it were
+a normal entry. Therefore the actions list may have to be rearranged so that
+'set_config' is called before 'process_path_error'.
+
+
+==   Configuration   ==
+
+This expects configuration settings in the $self->{config} hash, which, in
+the default Posy setup, can be defined in the main "config" file in the
+config directory.
+
+``not_found_entry''
+The relative path of the entry file to use for a Not Found page. This is
+expected to be somewhere under the data directory, and will be treated like
+a normal entry, except that it is only shown when there is a path-parsing
+error (that is, when a page is not found).
+
+For example:
+
+    not_found_entry: errorpages/404.html
+
+Those using the Posy::Plugin::Categories plugin may wish also to set the
+'categories_hide' value, so that one can place the custom Not Found page
+into a directory which won't be displayed in the category_tree or
+breadcrumbs provided by the Posy::Plugin::Categories plugin.
+
+
+==== REQUIRES ====
+
+    Posy
+    Posy::Core
+
+    Test::More
+
+
+==== AUTHOR ====
+
+    Kathryn Andersen (RUBYKAT)
+    perlkat AT katspace dot com
+    http://www.katspace.com
+
+
+==== COPYRIGHT AND LICENCE ====
+
+Copyright (c) 2005 by Kathryn Andersen http://www.katspace.com
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Perl itself.
+
