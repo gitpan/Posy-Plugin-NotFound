@@ -7,11 +7,11 @@ Posy::Plugin::NotFound - Posy plugin to provide a custom Not Found page.
 
 =head1 VERSION
 
-This describes version B<0.21> of Posy::Plugin::NotFound.
+This describes version B<0.22> of Posy::Plugin::NotFound.
 
 =cut
 
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 
 =head1 SYNOPSIS
 
